@@ -44,7 +44,10 @@ import { Browser, chromium, Locator, Page, webkit } from "@playwright/test";
 
 
     //highlight - debugging
-    await page.locator('#input-firstname').highlight();
+    // await page.locator('#input-firstname').highlight();
+
+    // enter the charcter like real user
+    await page.locator('#input-email').pressSequentially('Testing-Automation@learn.com',{delay: 200});
 
     await page.waitForTimeout(2000);
 
