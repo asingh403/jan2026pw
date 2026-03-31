@@ -1,0 +1,68 @@
+1. id: unique
+#id
+#input-email -- 1 of 1
+
+tag#id
+input#input-email
+
+page.locator('#input-email')
+
+2. class: can be duplicate
+.clssname
+.form-control -- 1 of 3
+tag.classname
+input.form-control
+
+3. multiple classes:
+.c1.c2.c3....cn
+tag.c1.c2.c3....cn
+input.form-control.input-lg
+input.input-lg.form-control
+input.input-lg
+
+page.locator('input.input-lg')
+
+
+4. id and class:
+#id.class
+tag#id.class
+tag.class#id
+input#input-firstname.form-control
+
+
+5. other attributes:
+[attr='value']
+tag[attr='value']
+input[name='email']
+
+input[name='email']#input-email
+input[id='input-email']
+
+tag[attr1='value'][attr2='value']
+input[name='email'][placeholder='E-Mail'][type='email']
+input[name='email'][placeholder='E-Mail'][type='email']#input-email
+
+input#input-email[name='email'][placeholder='E-Mail'][type='email']
+input[name='agreeTerms'][type='checkbox']
+
+
+6. contains:
+tag[attr *= 'value']
+input[placeholder *= 'Address']
+input[placeholder *= 'Address'][id='input-email']
+img[src*='opencart-logo.png']
+
+7. startsWith:
+tag[attr ^= 'value']
+img[alt ^= 'naveen']
+
+8. endsWith:
+tag[attr $= 'value']
+img[alt $= 'opencart']
+
+9. parent to child element:
+a. parentTag childTag --->  direct + indirect child elements in the DOM
+div#content input#input-email
+
+b. parentTag > childTag ---> only direct elements
+div.form-group > input#input-email
