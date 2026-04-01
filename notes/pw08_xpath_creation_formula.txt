@@ -1,0 +1,27 @@
+Xpath formula
+1. //htmlTag[@attribute='value']
+
+2. Multiple Attribut 
+//htmlTag[@attr1='value' and @attr2='value']
+
+3. Without tag
+//*[@attribute='value']
+
+4. text() in xpath
+//htmlTag[text()= 'value']
+
+5. contains() in xpath
+//tag[contains(@attr, 'value')]
+//label[contains(@for, 'firstname')]
+
+using contains with two attribute 
+//input[contains(@placeholder, 'First') and @id='input-firstname']
+
+6. contains with text()
+//tag[contains(text() = 'value')]
+
+7.contains() with text() and contains() with attribute
+//input[contains(text()='value') and contains(@attri = 'value')]
+
+
+//input[contains(text(),'first') and contains(@placeholder = 'First')]
