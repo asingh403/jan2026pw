@@ -23,5 +23,9 @@ using contains with two attribute
 7.contains() with text() and contains() with attribute
 //input[contains(text()='value') and contains(@attri = 'value')]
 
-
 //input[contains(text(),'first') and contains(@placeholder = 'First')]
+
+8. start with
+//tag[starts-with(@attr, 'value')]
+//h1[starts-with(text(), 'Register')]
+
