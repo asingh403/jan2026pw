@@ -29,3 +29,31 @@ using contains with two attribute
 //tag[starts-with(@attr, 'value')]
 //h1[starts-with(text(), 'Register')]
 
+9. ends-with ❌
+
+10. Parent to child 
+//parentTag//chidTag --> direct+ indirect child elements
+//parentTag/childTag --> only direct child elements
+
+//aside[@id='column-right']//a[text()= 'Login']
+
+11. Child to immediate Parent [backward Trace]
+//input[@id= 'input-firstname']/../../../
+//input[@id= 'input-firstname']/parent::div
+
+
+12. child to grand parent
+//a[text()='Login']/ancestor::aside
+//childTagName[text()='Login']/ancestor::TagName
+
+13. following sibling concepts
+//input[@id='input-email']//preceeding-sibling::label
+
+14. preceeding sibling concepts
+//label[@for='input-email']//following-sibling::input[@id='email']
+//14. indexing in xpath:
+(//input[@class='form-control'])[1]
+(//input[@class='form-control'])[position()=1]
+(//input[@class='form-control'])[last()]
+(//input[@class='form-control'])[last()-3]
+
