@@ -10,6 +10,13 @@ import { Browser, chromium, expect, FrameLocator, Locator, Page, webkit } from "
   let framEle:FrameLocator =page.frameLocator('iframe');
   
   await page.waitForTimeout(2000);
-  await framEle.locator('div').dblclick();
+  //using double click
+  //await framEle.locator('div').dblclick();
+  let box = framEle.locator('div');
+//   box.dblclick();
+
+  await box.click({clickCount: 2});
+
+
 
 })();
