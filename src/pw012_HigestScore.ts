@@ -18,11 +18,13 @@ import { Browser, chromium, FrameLocator, Locator, Page, webkit } from "@playwri
 
     let allScoreVal:number[] = [];
     for(let i=0; i<allScores.length-2; i++){
-        allScoreVal.push((Number)(allScores[i]));
+        allScoreVal.push(Number(allScores[i]));
     }
 
-    allScoreVal.sort;
-    console.log('Higest score is : '+ allScoreVal[allScores.length-2]);
+    // console.log('Before Sorting : '+allScoreVal);
+    allScoreVal.sort((a, b) => a - b);
+    console.log('After Sorting : '+allScoreVal);
+    console.log('Higest score is : '+ allScoreVal[allScoreVal.length-1]);
 
 
 
