@@ -33,4 +33,7 @@ let page:Page;
   let isInclude:Boolean=text.includes('Congratulations!');
   console.log(isInclude);
 
+  //if I want to turn off alert
+  page.off('dialog', async dialog => { })
+
 })();
