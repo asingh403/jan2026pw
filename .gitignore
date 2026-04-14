@@ -1,11 +1,24 @@
-
 # Playwright
+# Dependencies
 node_modules/
-/test-results/
-/playwright-report/
-/blob-report/
+
+# Playwright artifacts
+test-results/
+test-results-report/
+playwright-report/
+blob-report/
+screenshots/
+
+# Playwright internal
 /playwright/.cache/
 /playwright/.auth/
+
+# Build outputs
+dist/
+build/
+coverage/
+
+# Misc
 .history/
 .DS_Store
 auth/
