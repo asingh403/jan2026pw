@@ -19,23 +19,5 @@ test('check page logo', async ({ page }) => {
   await page.goto('https://naveenautomationlabs.com/opencart/index.php?route=account/login');
   console.log(await page.getByTitle('naveenopencart').count());
   await page.waitForTimeout(2000);
-  expect(await page.getByTitle('naveenopencart').count()).toBe(2);
+  expect(await page.getByTitle('naveenopencart').count()).toBe(3);
 }); 
-
-
-// test("check page title", async ({ page, request }) => {
-//   await page.goto(
-//     "https://naveenautomationlabs.com/opencart/index.php?route=account/login",
-//   );
-
-//   let title: string = await page.title();
-//   console.log(`the page title is : ${title}`);
-//   // expect(title).toBe('Google');
-
-//   let response: APIResponse = await request.get("https://gorest.co.in/public/v2/users");
-//   console.log(response.status());
-//   console.log(response.statusText());
-//   console.log(await response.body());
-//   console.log(response.json());
-
-// });
