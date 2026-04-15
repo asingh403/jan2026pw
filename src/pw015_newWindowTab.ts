@@ -42,4 +42,7 @@ let page: Page;
   await page.bringToFront();
   console.log('Parent window title : '+ await page.title());
 
+  // https://app.box.com/file/2015318339150
+  // 1:33 hrs
+
 })();
