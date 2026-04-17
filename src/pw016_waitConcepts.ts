@@ -60,12 +60,4 @@ let page: Page;
 // page.waitForEvent()
 // page.waitForURL(); // if the irl is properly visible
 
-
-
-
-
-
-
-  
-
 })();
