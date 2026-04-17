@@ -17,6 +17,7 @@ screenshots/
 dist/
 build/
 coverage/
+videos/
 
 # Misc
 .history/
