@@ -24,5 +24,3 @@ test('has title', async ({ page }) => {
     await page.locator(`//div[@id="__docusaurus_skipToContent_fallback"]/header/div/div/a`).click();
     await page.waitForTimeout(2000);
 });
-
-
