@@ -2,7 +2,6 @@ import {test, expect, Page, Locator} from '@playwright/test'
 
 test('element is visible, disabled assertions', async ({page}) => {
     await page.goto('https://selectorshub.com/xpath-practice-page/', {waitUntil: 'load'});
-
     let targetStr = 'Test';
     while(true){
         // let xpath = `//table[@id = 'tablepress-1']/tbody/tr/td[text()= '${targetStr}']//preceding-sibling::td//input[@type = 'checkbox']`;
@@ -26,5 +25,32 @@ test('element is visible, disabled assertions', async ({page}) => {
             break;
         }
     }
+    await page.pause();
+})
+
+test('multiple selection', async({page}) => {
+    await page.goto('https://selectorshub.com/xpath-practice-page/', {waitUntil: 'load'});
+    let country:string = 'India'
+    
+   
+    while(true){ 
+    let allEles:Locator[] = await page.locator(`//table[@id = 'tablepress-1']/tbody/tr/td[text()= '${country}']//preceding-sibling::td//input[@type = 'checkbox']`).all();
+        if(allEles.length > 0){
+        for(let e of allEles){
+            await e.check();
+            // console.log("ele found" + " : "+country);
+        }
+    }
+
+    // pagination logic to click on next icon
+    let next = page.getByRole('link', {name: 'Next'});
+    if(await next.isDisabled()){
+        console.log('Pagination is over...');
+        break;        
+      }
+      await next.click();
+      console.log("ele found" + " : "+country);
+      
+   }
     await page.pause();
 })
