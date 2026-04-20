@@ -14,7 +14,7 @@ import { defineConfig, devices } from "@playwright/test";
 export default defineConfig({
   testDir: "./tests",
   /* Run tests in files in parallel */
-  fullyParallel: false,
+  fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
   /* Retry on CI only */
@@ -23,7 +23,7 @@ export default defineConfig({
   workers: process.env.CI ? 2 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
 
-  reporter: "html",
+  reporter: [["html",{ outputFolder: 'playwright-report' }],['list'],],
   timeout: 10000,
   outputDir: "test-results-report/",
 
@@ -39,7 +39,8 @@ export default defineConfig({
     screenshot: "only-on-failure",
     video: "off",
     launchOptions: {
-      args: ["--start-maximized", "--window-size=1920,1080"],
+      // args: ["--start-maximized", "--window-size=1920,1080"],
+      args: ["--start-maximized"],
     },
     viewport: null, // ← required, disables fixed viewport
   },
@@ -52,10 +53,10 @@ export default defineConfig({
       use: { channel: "chrome", headless: false, ...devices["Desktop Chrome"] },
     },
 
-    {
-      name: "firefox",
-      use: { ...devices["Desktop Firefox"] },
-    },
+    // {
+    //   name: "firefox",
+    //   use: { ...devices["Desktop Firefox"] },
+    // },
 
     // {
     //   name: 'webkit',

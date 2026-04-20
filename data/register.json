@@ -1,0 +1,18 @@
+[
+  {
+    "firstName": "Alice",
+    "lastName": "Smith",
+    "email": "alice_qa@nal1.com",
+    "telephone": "1234567890",
+    "password": "Password@123",
+    "subscribeNewsletter": "Yes"
+  },
+  {
+    "firstName": "Bob",
+    "lastName": "Jones",
+    "email": "bob_qa@nal1.com",
+    "telephone": "0987654321",
+    "password": "Secret@456",
+    "subscribeNewsletter": "No"
+  }
+]
