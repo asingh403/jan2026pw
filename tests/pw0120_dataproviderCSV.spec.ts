@@ -50,4 +50,4 @@ function getRandomEmail():string {
     let randomEmail:string = 'auto_'+ Math.random().toString(36).substring(2, 9)+'@qa.test';
     console.log('random email : '+ randomEmail);
     return randomEmail;
-}
+} 
