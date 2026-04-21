@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@faker-js/faker": "^9.9.0",
-    "csv-parse": "^6.2.1"
+    "csv-parse": "^6.2.1",
+    "xlsx": "^0.18.5"
   }
 }
