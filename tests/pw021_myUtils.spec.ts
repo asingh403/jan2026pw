@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import {ElementUtil} from '../utils/ElementUtil.js';
+import {ElementUtil} from '../utils/PW021_ElementUtil.js';
 
 test('has title', async({page}) => {
     await page.goto('https://naveenautomationlabs.com/opencart/index.php?route=account/login');
