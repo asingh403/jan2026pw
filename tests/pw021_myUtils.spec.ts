@@ -7,7 +7,9 @@ test('has title', async({page}) => {
     let eleUtil = new ElementUtil(page, 10000);
     await eleUtil.fill(`//input[@id='input-email']`, 'test@contact.com');
     await eleUtil.fill(page.getByLabel('Password'), 'test@123');
-    await eleUtil.click(`input[type="submit"][value="Login"]`, {force: true, timeout: 5000});
+    await eleUtil.click(`input[type="submit"][value="Login"]`, {force: true, timeout: 5000}, 0);
+
+    await page.waitForTimeout(5000);
 
 
 

@@ -16,11 +16,21 @@ export class ElementUtil{
      * @param locator this method convert string to locator
      * @returns semantic base locator
      */
-    private getLocator(locator:flexibleLocator): Locator{
+    private getLocator(locator:flexibleLocator, index?:number): Locator{
         if(typeof locator === 'string'){
-            return this.page.locator(locator);
+            if(index){
+                return this.page.locator(locator);
+            }else {
+                return this.page.locator(locator).first();
+            }
+        }else {
+            if(index){
+                return locator.nth(index);
+            }else {
+                return locator.first();
+
+            }
         }
-        return locator;
     }
 
     /**
@@ -29,8 +39,8 @@ export class ElementUtil{
      * @param options 
      */
 
-    async click(locator:flexibleLocator, options?:{ force?:boolean, timeout?:number }):Promise<void>{
-        await this.getLocator(locator).click({
+    async click(locator:flexibleLocator, options?:{ force?:boolean, timeout?:number },index?:number):Promise<void>{
+        await this.getLocator(locator, index).click({
             force:options?.force,
             timeout:options?.timeout || this.defaultTimeOut
         });
