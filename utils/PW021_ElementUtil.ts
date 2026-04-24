@@ -4,9 +4,9 @@ type flexibleLocator = string | Locator;
 
 export class ElementUtil{
     private page:Page;
-    private defaultTimeOut = 30000;
+    private defaultTimeOut = 3000;
     
-    constructor(page:Page, timeout:number, number=3000){
+    constructor(page:Page, timeout:number=3000){
         this.page = page;
         this.defaultTimeOut = timeout;
     }
